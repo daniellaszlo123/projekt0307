@@ -36,25 +36,22 @@ class Muveletek {
             System.out.println("Rossz válasz! A helyes válasz: " + eredmeny);
             return false;
         }
-
     }
 
     boolean szorzas() {
-
         Random rnd = new Random();
         int szam1 = rnd.nextInt(10) + 1;
         int szam2 = rnd.nextInt(10) + 1;
         Scanner sc = new Scanner(System.in);
         System.out.printf("%d*%d=", szam1, szam2);
         int valasz = sc.nextInt();
-        int eredmeny = szam1 + szam2;
+        int eredmeny = szam1 * szam2;
         if (eredmeny == valasz) {
             System.out.println("Helyes válasz!");
             return true;
         } else {
             System.out.println("Rossz válasz! A helyes válasz: " + eredmeny);
             return false;
-
         }
 
     }
@@ -82,11 +79,10 @@ public class java0307 {
     public static void main(String[] args) {
         int helyes = 0, rossz = 0;
         boolean joE;
-        int muvelet;
+        int muvelet=0;
         Scanner sc = new Scanner(System.in);
         Muveletek mu = new Muveletek();
-        while (true) {
-
+        while (!(muvelet==5)) {
             do {
                 System.out.printf("Helyes válaszok:%d Helytelen válaszok:%d\n", helyes, rossz);
                 System.out.println(
@@ -123,10 +119,8 @@ public class java0307 {
                 } else {
                     rossz++;
                 }
-            } else if (muvelet == 5) {
-                System.out.println("Köszi hogy játszottál!");
-                return;
             }
+            System.out.println("Köszi hogy játszottál!");
         }
     }
 }
