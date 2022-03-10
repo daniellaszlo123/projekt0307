@@ -38,6 +38,21 @@ import java.util.Scanner;
             
         }
         void szorzas() {
+            
+            Random rnd = new Random();
+            int szam1 = rnd.nextInt(10);
+            int szam2 = rnd.nextInt(10);
+            Scanner sc = new Scanner(System.in);
+            System.out.println(szam1 +"+"+ szam2 +"=__");
+            int valasz=sc.nextInt();
+            int eredmeny=szam1+szam2;
+            if (eredmeny == valasz) {
+                System.out.println("Helyes válasz!");
+             
+            }else{
+                System.out.println("Rossz válasz! A helyes válasz: "+eredmeny);
+               
+        }  
         
         }
         void osztas() {
