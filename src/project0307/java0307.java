@@ -29,7 +29,7 @@ class Muveletek {
 
     boolean kivonas() {
         szam1 = rnd.nextInt(100) + 1;
-        szam2 = rnd.nextInt(szam1);
+        szam2 = rnd.nextInt(szam1-1)+1;
         System.out.printf("%d-%d=", szam1, szam2);
         valasz = sc.nextInt();
         eredmeny = szam1 - szam2;
