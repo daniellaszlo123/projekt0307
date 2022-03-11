@@ -4,14 +4,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 class Muveletek {
-    boolean osszeadas() {
         Random rnd = new Random();
-        int szam1 = rnd.nextInt(100) + 1;
-        int szam2 = rnd.nextInt(100 - szam1) + 1;
         Scanner sc = new Scanner(System.in);
-        System.out.printf("%d+%d=", szam1, szam2);
-        int valasz = sc.nextInt();
-        int eredmeny = szam1 + szam2;
+        int szam1, szam2, eredmeny, valasz;
+        
+    boolean eredmenyEldont(){
         if (eredmeny == valasz) {
             System.out.println("Helyes válasz!");
             return true;
@@ -19,58 +16,42 @@ class Muveletek {
             System.out.println("Rossz válasz! A helyes válasz: " + eredmeny);
             return false;
         }
+    }
+    
+    boolean osszeadas() {
+        szam1 = rnd.nextInt(100) + 1;
+        szam2 = rnd.nextInt(100 - szam1) + 1;
+        System.out.printf("%d+%d=", szam1, szam2);
+        valasz = sc.nextInt();
+        eredmeny = szam1 + szam2;
+        return eredmenyEldont();
     }
 
     boolean kivonas() {
-        Random rnd = new Random();
-        int szam1 = rnd.nextInt(100) + 1;
-        int szam2 = rnd.nextInt(szam1);
-        Scanner sc = new Scanner(System.in);
+        szam1 = rnd.nextInt(100) + 1;
+        szam2 = rnd.nextInt(szam1);
         System.out.printf("%d-%d=", szam1, szam2);
-        int valasz = sc.nextInt();
-        int eredmeny = szam1 - szam2;
-        if (eredmeny == valasz) {
-            System.out.println("Helyes válasz!");
-            return true;
-        } else {
-            System.out.println("Rossz válasz! A helyes válasz: " + eredmeny);
-            return false;
-        }
+        valasz = sc.nextInt();
+        eredmeny = szam1 - szam2;
+        return eredmenyEldont();
     }
 
     boolean szorzas() {
-        Random rnd = new Random();
-        int szam1 = rnd.nextInt(10) + 1;
-        int szam2 = rnd.nextInt(10) + 1;
-        Scanner sc = new Scanner(System.in);
+        szam1= rnd.nextInt(10) + 1;
+        szam2 = rnd.nextInt(10) + 1;
         System.out.printf("%d*%d=", szam1, szam2);
-        int valasz = sc.nextInt();
-        int eredmeny = szam1 * szam2;
-        if (eredmeny == valasz) {
-            System.out.println("Helyes válasz!");
-            return true;
-        } else {
-            System.out.println("Rossz válasz! A helyes válasz: " + eredmeny);
-            return false;
-        }
-
+        valasz = sc.nextInt();
+        eredmeny = szam1 * szam2;
+        return eredmenyEldont();
     }
 
     boolean osztas() {
-        Random rnd = new Random();
-        int szam1 = rnd.nextInt(10) + 1;
-        int szam2 = rnd.nextInt(10) + 1;
-        Scanner sc = new Scanner(System.in);
+        szam1 = rnd.nextInt(10) + 1;
+        szam2 = rnd.nextInt(10) + 1;
         System.out.printf("%d/%d=", (szam1 * szam2), szam2);
-        int valasz = sc.nextInt();
-        int eredmeny = (szam1 * szam2) / szam2;
-        if (eredmeny == valasz) {
-            System.out.println("Helyes válasz!");
-            return true;
-        } else {
-            System.out.println("Rossz válasz! A helyes válasz: " + eredmeny);
-            return false;
-        }
+        valasz = sc.nextInt();
+        eredmeny = (szam1 * szam2) / szam2;
+        return eredmenyEldont();
     }
 }
 
@@ -84,7 +65,6 @@ public class java0307 {
         Muveletek mu = new Muveletek();
         while (!(muvelet==5)) {
             do {
-                System.out.printf("Helyes válaszok:%d Helytelen válaszok:%d\n", helyes, rossz);
                 System.out.println(
                         "Milyen műveletet szeretnél gyakorolni?(Számot adj meg!)\n 1.Összeadás\n 2.Kivonás\n 3.Szorzás\n 4.Osztás\n\n 5.Kilépés");
                 System.out.print("Válasz:");
@@ -120,7 +100,8 @@ public class java0307 {
                     rossz++;
                 }
             }
-            System.out.println("Köszi hogy játszottál!");
+            System.out.printf("Helyes válaszok:%d Helytelen válaszok:%d\n", helyes, rossz);
         }
+        System.out.println("Köszi hogy játszottál!");
     }
 }
