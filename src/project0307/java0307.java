@@ -100,8 +100,8 @@ public class java0307 {
                     rossz++;
                 }
             }
-            System.out.printf("Helyes válaszok:%d Helytelen válaszok:%d\n", helyes, rossz);
         }
+        System.out.printf("Helyes válaszok:%d Helytelen válaszok:%d\n", helyes, rossz);
         System.out.println("Köszi hogy játszottál!");
     }
 }
